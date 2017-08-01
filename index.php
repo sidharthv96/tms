@@ -7,6 +7,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>TMS 2K17</title>
 
+<link rel="stylesheet" type="text/css" href="pictureflip.css" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+
+<script type="text/javascript" src="//use.typekit.net/vue1oix.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<script src="modernizr.js"></script>
+<script src="jquery.js"></script>
+<script src="jquery.pictureflip.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	$('#flipbook').pageFlip({});
+
+});
+</script>
+
         <!-- Bootstrap CSS -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
@@ -63,12 +81,29 @@
                     $images[$file] = filemtime($file);
                     }
                     $file=array_rand($images);                    
-                    echo "<img src='./img/".basename($file)."' class='img-responsive col-md-6 col-md-offset-3' alt=''>";                    
+                    echo "<img id='image' src='./img/".basename($file)."' class='img-responsive col-md-6 col-md-offset-3' alt=''>";                    
                 ?>
             </div>
+
+            <!-- <div class="row">
+                            
+                <div id="flipbook">
+
+                    <?php
+                    foreach ($images as $file => $value) {
+                        echo "<div class='slide'>
+                        <img src='./img/".basename($file)."' alt='' /> 
+                        <div class='content'><a href='#'>Flowers: What you didn't know</a></div> 
+                    </div>";
+                        }
+                    ?>
+                </div>
+            </div> -->
+                        
             <div class="row">
                 <h3 class="text-center sketch">Government Engineering College<br> Thrissur</h3>
             </div>
+
         </div>
         
         
@@ -80,5 +115,24 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Bootstrap JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script>
+            var imageSources = [
+                <?php
+                foreach ($images as $file => $value) {
+                    echo "\"".basename($file)."\",";
+                    }
+                ?>
+            ]
+
+            var index = 0;
+            setInterval (function(){
+            if (index === imageSources.length) {
+                index = 0;
+            }
+            document.getElementById("image").src = imageSources[index];
+            index++;
+            } , 2000);
+        </script>
     </body>
 </html>
