@@ -22,7 +22,7 @@
             }
 
             body{
-                margin-top: 90px;
+                margin-top: 10px;
             }
 
             span{
@@ -31,6 +31,10 @@
 
             @media only screen 
             and (min-width : 1224px) {
+                body{
+                margin-top: 90px;
+            }
+
                 h1{
                     font-size: 5em;
                 }
