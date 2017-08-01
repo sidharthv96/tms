@@ -7,22 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>TMS 2K17</title>
 
-<link rel="stylesheet" type="text/css" href="pictureflip.css" />
-
-<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
-
-<script type="text/javascript" src="//use.typekit.net/vue1oix.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-<script src="modernizr.js"></script>
-<script src="jquery.js"></script>
-<script src="jquery.pictureflip.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-
-	$('#flipbook').pageFlip({});
-
-});
 </script>
 
         <!-- Bootstrap CSS -->
@@ -44,16 +28,16 @@ $(document).ready(function() {
             @media only screen 
             and (min-width : 1224px) {
                 h1{
-                            font-size: 5em;
-                        }
+                    font-size: 5em;
+                }
 
-                        h2{
-                            font-size: 3.9em;
-                        }
-                        
-                        h3{
-                            font-size: 3em;
-                        }
+                h2{
+                    font-size: 3.9em;
+                }
+                
+                h3{
+                    font-size: 3em;
+                }
                         
             }
             
@@ -83,34 +67,13 @@ $(document).ready(function() {
                     $file=array_rand($images);                    
                     echo "<img id='image' src='./img/".basename($file)."' class='img-responsive col-md-6 col-md-offset-3' alt=''>";                    
                 ?>
-            </div>
-
-            <!-- <div class="row">
-                            
-                <div id="flipbook">
-
-                    <?php
-                    foreach ($images as $file => $value) {
-                        echo "<div class='slide'>
-                        <img src='./img/".basename($file)."' alt='' /> 
-                        <div class='content'><a href='#'>Flowers: What you didn't know</a></div> 
-                    </div>";
-                        }
-                    ?>
-                </div>
-            </div> -->
-                        
+            </div                        
             <div class="row">
                 <h3 class="text-center sketch">Government Engineering College<br> Thrissur</h3>
             </div>
 
         </div>
         
-        
-        
-        
-        
-
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Bootstrap JavaScript -->
@@ -120,18 +83,13 @@ $(document).ready(function() {
             var imageSources = [
                 <?php
                 foreach ($images as $file => $value) {
-                    echo "\"".basename($file)."\",";
+                    echo "\"img/".basename($file)."\",";
                     }
                 ?>
             ]
 
-            var index = 0;
             setInterval (function(){
-            if (index === imageSources.length) {
-                index = 0;
-            }
-            document.getElementById("image").src = imageSources[index];
-            index++;
+            document.getElementById("image").src = imageSources[Math.floor(Math.random() * imageSources.length)];;            
             } , 2000);
         </script>
     </body>
