@@ -25,6 +25,10 @@
                 margin-top: 90px;
             }
 
+            span{
+                color: red;
+            }
+
             @media only screen 
             and (min-width : 1224px) {
                 h1{
@@ -41,6 +45,7 @@
                         
             }
             
+            
 
             </style>            
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -55,7 +60,7 @@
         <div class="container">
             
             <div class="row">
-                <h1 class="text-center sketch">Thrissur Motor Show 2017</h1>
+                <h1 class="text-center sketch"><span>T</span>hrissur <span>M</span>otor <span>S</span>how 20<span>17</span></h1>
                 <h2 class="text-center sketch">Under Construction</h2>
             </div>
             <div class="row">
