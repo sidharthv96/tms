@@ -26,7 +26,7 @@
             }
 
             span{
-                color: red;
+                color: #ec2424;
             }
 
             @media only screen 
@@ -95,7 +95,7 @@
 
             setInterval (function(){
             document.getElementById("image").src = imageSources[Math.floor(Math.random() * imageSources.length)];;            
-            } , 2000);
+            } , 3500);
         </script>
     </body>
 </html>
